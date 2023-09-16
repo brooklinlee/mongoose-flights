@@ -27,6 +27,11 @@
               <button type="submit">X</button>
             </form>
           </td>
+          <td>
+            <form action="/flights/<%= flight._id %>" method="GET">
+              <button type="submit">View Details</button>
+            </form>
+          </td>
           <% }) %>
         </tbody>
     </table>
