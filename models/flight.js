@@ -25,9 +25,11 @@ const flightSchema = new Schema({
       const nextYearDate = new Date(currentDate)
       nextYearDate.setFullYear(currentDate.getFullYear() +1)
       return nextYearDate
+      }
     }
-  }, 
-})
+  }, {
+    timestamps: true
+  })
 
 const Flight = mongoose.model('Flight', flightSchema)
 
