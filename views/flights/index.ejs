@@ -1,5 +1,35 @@
-<%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/public/stylesheets/style.css">
-<%- include('../partials/nav') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <a href="/index">Home Page</a>
+  </nav>
+  <main>
+    <h1>Flights</h1>
+    <table>
+      <thead>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>Flight No.</th>
+        <th>Departs</th>
+      </thead>
+      <tbody>
+        <% flights.forEach(flight => { %>
+          <td><%= flight.airline %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+          <% }) %>
+        </tbody>
+    </table>
+    <a href="/flights/new">Add New Flight</a>
+  </main>
+</body>
+</html>
 
-<%- include('../partials/footer') %>
+
