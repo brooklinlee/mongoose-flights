@@ -7,5 +7,10 @@
 </head>
 <body>
   <%- include('../partials/nav') %>
+  <h1>View flight on <%= flight.airline %> Airlines leaving <% flight.airport %> on <%= flight.departs %></h1>
+
+  <form action="/flights/<%= flight._id %>/edit" method="GET">
+    <button type="submit">Edit flight information here</button>
+    </form>
 </body>
 </html>
