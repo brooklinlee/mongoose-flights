@@ -19,15 +19,15 @@ const flightSchema = new Schema({
   },
   departs: {
     type: Date,
-    default: () => {
-        return new Date().getFullYear()
-      }
     // default: () => {
-    //   const currentDate = new Date()
-    //   const nextYearDate = new Date(currentDate)
-    //   nextYearDate.setFullYear(currentDate.getFullYear() +1)
-    //   return nextYearDate
+    //     return new Date().getFullYear()
     //   }
+    default: () => {
+      const currentDate = new Date()
+      const nextYearDate = new Date(currentDate)
+      nextYearDate.setFullYear(currentDate.getFullYear() +1)
+      return nextYearDate
+      }
     }
   }, {
     timestamps: true
