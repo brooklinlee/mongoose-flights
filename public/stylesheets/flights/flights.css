@@ -4,6 +4,10 @@ body {
   background-color: #F6F0ED;
 }
 
+table {
+  display: block;
+}
+
 body > nav {
   /* grid-area: nav; */
   background-color: #28536B;
