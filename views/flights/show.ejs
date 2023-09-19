@@ -11,10 +11,12 @@
       <th>Price</th>
     </thead>
     <tbody>
-      <tr>
-        <td>Test 1</td>
-        <td>Test 2</td>
-      </tr>
+      <% flight.tickets.forEach(function(ticket) { %>
+        <tr>
+          <td><%= tickets.seat %></td>
+          <td><%= tickets.price %></td>
+        </tr>
+      <% }) %>
     </tbody>
   </table>
   <form action="/flights/<%= flight._id %>/edit" method="GET">
