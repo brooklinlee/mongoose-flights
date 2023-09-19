@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-// import { Ticket } from "./ticket"
+
 
 const Schema = mongoose.Schema
 
@@ -15,7 +15,9 @@ const ticketSchema = new Schema({
   }
 })
 
-// const Ticket = mongoose.model('Example', ticketSchema)
+const mealSchema = new Schema({
+  seat: String
+})
 
 const flightSchema = new Schema({
   airline : {
@@ -41,7 +43,8 @@ const flightSchema = new Schema({
       return nextYearDate
       }
     },
-  tickets: [ticketSchema]
+  tickets: [ticketSchema],
+  meals: [{type: Schema.Types.ObjectId, ref: 'Meal'}]
   }, {
     timestamps: true
   })
