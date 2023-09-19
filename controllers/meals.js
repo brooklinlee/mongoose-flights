@@ -1,4 +1,4 @@
-import { Flight } from '../models/flight.js'
+// import { Meal } from "../models/meal"
 
 function newMeal(req, res) {
   res.render('meals/new', {

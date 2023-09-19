@@ -1,11 +1,11 @@
-// import mongoose from "mongoose"
+import mongoose from "mongoose"
 
-// const Schema = mongoose.Schema
+const Schema = mongoose.Schema
 
-// const mealSchema = new Schema({
-//   seat: String
-// })
+const mealSchema = new Schema({
+  name: String
+})
 
-// const Meal = mongoose.model('Meal', mealSchema)
+const Meal = mongoose.model('Meal', mealSchema)
 
-// export { Meal }
+export { Meal }

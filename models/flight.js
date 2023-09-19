@@ -1,7 +1,5 @@
 import mongoose from "mongoose"
 
-
-
 const Schema = mongoose.Schema
 
 const ticketSchema = new Schema({
@@ -15,9 +13,11 @@ const ticketSchema = new Schema({
   }
 })
 
-const mealSchema = new Schema({
-  seat: String
-})
+// const mealSchema = new Schema({
+//   name: String
+// })
+
+// const Meal = mongoose.model('Meal', mealSchema)
 
 const flightSchema = new Schema({
   airline : {
