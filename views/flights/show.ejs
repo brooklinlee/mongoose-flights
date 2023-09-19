@@ -5,6 +5,7 @@
 <main>
   <h1>You have a flight with <%= flight.airline %> Airlines leaving <% flight.airport %> on <%= flight.departs %></h1>
   <h2>Ticket Information</h2>
+
   <table>
     <thead>
       <th>Seat</th>
@@ -13,25 +14,29 @@
     <tbody>
       <% flight.tickets.forEach(function(ticket) { %>
         <tr>
-          <td><%= tickets.seat %></td>
-          <td><%= tickets.price %></td>
+          <td><%= ticket.seat %></td>
+          <td><%= ticket.price %></td>
         </tr>
       <% }) %>
     </tbody>
   </table>
+
+  <h3>Add A Ticket:</h3>
+  
+  <form action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="seat-area">Seat</label>
+    <input type="text" name="seat" id="seat-area">
+    <label for="price-area">Price</label>
+    <input type="text" name="price" id="price-area">
+    <button type="submit">Save Ticket</button>
+  </form>
+  
+  
+
   <form action="/flights/<%= flight._id %>/edit" method="GET">
     <button type="submit">Edit flight information here</button>
   </form>
-  <h3>Add A Ticket:</h3>
-  <form action="" method="">
-    <label for="seat">Seat</label>
-    <input type="text" name="seat" id="seat">
-    <label for="price">Price</label>
-    <input type="text" name="price" id="price">
-  </form>
-  <form action="" method="">
-    <button type="submit">Save Ticket</button>
-  </form>
+
 </main>
 
 <%- include('../partials/footer') %>

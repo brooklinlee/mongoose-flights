@@ -5,13 +5,13 @@ import mongoose from "mongoose"
 const Schema = mongoose.Schema
 
 const ticketSchema = new Schema({
-seat: { 
-  type: String, 
-},
+  seat : {
+    type: String,
+    default: 'n/a'
+  },
   price: {
     type: Number,
     min: 0,
-    default: 'n/a'
   }
 })
 
