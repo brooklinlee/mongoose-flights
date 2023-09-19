@@ -31,7 +31,25 @@
     <button type="submit">Save Ticket</button>
   </form>
   
+  <h3>Available Meals</h3>
+
+  <form method="POST" action="/flights/<%= flight._id %>/meals">
+    <select name="mealId">
+      <% meals.forEach(function(meal) { %>
+        <option value="<%= meal._id %>"><%= meal.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Meal</button>
+  </form>
+
+
+  <h3>List of meals</h3>
   
+  <ul>
+    <% flight.meals.forEach(meal => { %>
+      <li><%= meal.name %></li>
+    <% }) %>
+  </ul>
 
   <form action="/flights/<%= flight._id %>/edit" method="GET">
     <button type="submit">Edit flight information here</button>

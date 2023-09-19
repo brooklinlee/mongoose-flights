@@ -16,8 +16,13 @@
     <option><%= meal.name %></option>
   <% }) %>
 </select>
-  
-</table>
+
+
+<ul>
+  <% meals.forEach(function(meal) { %>
+    <li><%= meal.name %></li>
+  <% }) %>
+</ul>
 
 
 <%- include('../partials/footer') %>
