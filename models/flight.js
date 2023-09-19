@@ -1,6 +1,22 @@
 import mongoose from "mongoose"
 
+// import { Ticket } from "./ticket"
+
 const Schema = mongoose.Schema
+
+const ticketSchema = new Schema({
+seat: { 
+  type: String,
+  match: /[A-F][1-9]\d?/ 
+},
+  price: {
+    type: Number,
+    min: 0,
+    default: 'n/a'
+  }
+})
+
+// const Ticket = mongoose.model('Example', ticketSchema)
 
 const flightSchema = new Schema({
   airline : {
@@ -19,16 +35,14 @@ const flightSchema = new Schema({
   },
   departs: {
     type: Date,
-    // default: () => {
-    //     return new Date().getFullYear()
-    //   }
     default: () => {
       const currentDate = new Date()
       const nextYearDate = new Date(currentDate)
       nextYearDate.setFullYear(currentDate.getFullYear() +1)
       return nextYearDate
       }
-    }
+    },
+  tickets: [ticketSchema]
   }, {
     timestamps: true
   })
