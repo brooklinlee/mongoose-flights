@@ -1,10 +1,24 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/flights/flights.css" />
 <%- include('../partials/nav') %>
+
 <main>
   <h1>You have a flight with <%= flight.airline %> Airlines leaving <% flight.airport %> on <%= flight.departs %></h1>
+  <h2>Ticket Information</h2>
+  
   <form action="/flights/<%= flight._id %>/edit" method="GET">
     <button type="submit">Edit flight information here</button>
   </form>
+  <h3>Add A Ticket:</h3>
+  <form action="" method="">
+    <label for="seat">Seat</label>
+    <input type="text" name="seat" id="seat">
+    <label for="price">Price</label>
+    <input type="text" name="price" id="price">
+  </form>
+  <form action="" method="">
+    <button type="submit">Save Ticket</button>
+  </form>
 </main>
+
 <%- include('../partials/footer') %>
