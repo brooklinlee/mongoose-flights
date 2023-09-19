@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/flights/flights.css" />
 <%- include('../partials/nav') %>
 
-<h1>View flight on <%= flight.airline %> Airlines leaving <% flight.airport %> on <%= flight.departs %></h1>
+<h1>Edit information for your flight with  <%= flight.airline %> Airlines leaving <% flight.airport %> on <%= flight.departs %></h1>
   <form action="/flights/<%= flight._id %>?_method=PUT" method="POST">
     <label for="airline-input">Airline:</label>
     <input type="text" name="airline" id="airline-input" value="<%= flight.airline %>">
