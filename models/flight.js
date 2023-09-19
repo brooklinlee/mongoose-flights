@@ -13,12 +13,6 @@ const ticketSchema = new Schema({
   }
 })
 
-// const mealSchema = new Schema({
-//   name: String
-// })
-
-// const Meal = mongoose.model('Meal', mealSchema)
-
 const flightSchema = new Schema({
   airline : {
     type: String,

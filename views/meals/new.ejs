@@ -4,9 +4,20 @@
 
 <h1>Add New Meal</h1>
 
-<form action="" method="">
+<form action="/meals" method="POST">
   <label for="name-input">Meal:</label>
-  <input type="text" name="name" id="name-input">
+  <input type="text" name="name" id="name-input" autocomplete="off">
+  <button type="submit">Add Meal</button>
 </form>
+
+<h3>List of meals</h3>
+<select>
+  <% meals.forEach(function(meal) { %>
+    <option><%= meal.name %></option>
+  <% }) %>
+</select>
+  
+</table>
+
 
 <%- include('../partials/footer') %>

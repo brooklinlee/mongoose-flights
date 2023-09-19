@@ -1,5 +1,5 @@
 import { Flight } from '../models/flight.js'
-import { Meal } from '../models/meal.js'
+// import { Meal } from '../models/meal.js'
 
 function index(req, res) {
   Flight.find({})
@@ -25,7 +25,6 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key]
   }
-  console.log('REQ BODY:', req.body)
   Flight.create(req.body)
   .then(flight => {
     console.log('CREATED FLIGHT:', flight)
