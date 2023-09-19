@@ -15,7 +15,7 @@
       <% flight.tickets.forEach(function(ticket) { %>
         <tr>
           <td><%= ticket.seat %></td>
-          <td><%= ticket.price %></td>
+          <td>$<%= ticket.price %></td>
         </tr>
       <% }) %>
     </tbody>
@@ -25,9 +25,9 @@
   
   <form action="/flights/<%= flight._id %>/tickets" method="POST">
     <label for="seat-area">Seat</label>
-    <input type="text" name="seat" id="seat-area">
+    <input name="seat" required pattern="[A-F][1-9]\d?" id="seat-area" autocomplete="off">
     <label for="price-area">Price</label>
-    <input type="text" name="price" id="price-area">
+    <input type="number" name="price" id="price-area">
     <button type="submit">Save Ticket</button>
   </form>
   
